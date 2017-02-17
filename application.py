@@ -92,12 +92,18 @@ class BuyFoods(MethodView):
             'message': msg
         })
 
-application.add_url_rule('/', view_func=Index.as_view('index'))
-application.add_url_rule('/pets', view_func=Pets.as_view('pets'))
-application.add_url_rule('/pets/<pet_id>', view_func=Pet.as_view('pet'))
-application.add_url_rule('/pets/buy', view_func=BuyPet.as_view('buy_pet'))
-application.add_url_rule('/foods/', view_func=Foods.as_view('foods'))
-application.add_url_rule('/foods/buy', view_func=BuyFoods.as_view('buy_foods'))
+application.add_url_rule('/prod/', view_func=Index.as_view('index'))
+application.add_url_rule('/prod/pets', view_func=Pets.as_view('pets'))
+application.add_url_rule('/prod/pets/<pet_id>', view_func=Pet.as_view('pet'))
+application.add_url_rule('/prod/pets/buy', view_func=BuyPet.as_view('buy_pet'))
+application.add_url_rule('/prod/foods/', view_func=Foods.as_view('foods'))
+application.add_url_rule('/prod/foods/buy', view_func=BuyFoods.as_view('buy_foods'))
+application.add_url_rule('/v1/', view_func=Index.as_view('index'))
+application.add_url_rule('/v1/pets', view_func=Pets.as_view('pets'))
+application.add_url_rule('/v1/pets/<pet_id>', view_func=Pet.as_view('pet'))
+application.add_url_rule('/v1/pets/buy', view_func=BuyPet.as_view('buy_pet'))
+application.add_url_rule('/v1/foods/', view_func=Foods.as_view('foods'))
+application.add_url_rule('/v1/foods/buy', view_func=BuyFoods.as_view('buy_foods'))
 
 if __name__ == "__main__":
     application.run(debug=True)
