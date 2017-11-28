@@ -106,4 +106,4 @@ application.add_url_rule('/v1/foods/', view_func=Foods.as_view('v1_foods'))
 application.add_url_rule('/v1/foods/buy', view_func=BuyFoods.as_view('v1_buy_foods'))
 
 if __name__ == "__main__":
-    application.run(debug=True)
+    application.run(host='0.0.0.0', port=80, debug=True)
